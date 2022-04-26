@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+
+    display: grid;
+    grid-template:
+    "top-bar top-bar top-bar top-bar" 50px 
+    "left-menu emails settings shortcuts" 1fr / 
+    220px 1fr 240px 40px;
+}
+
+/*TOP BAR*/
+
+.top-bar {
+    grid-area: top-bar;
+    background-color: #ff000050;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 280px;
+    grid-gap: 5px;
+}
+
+/*TOP BAR LOGO SECTION*/
+
+.top-bar .logo {
+    border: 1px dashed black;
+
+    display: grid;
+    grid-template-columns: 50px 1fr;
+
+    padding: 5px;
+    grid-gap: 5px;
+
+}
+
+.top-bar .logo .menu-icon {
+    border: 1px dashed black;
+}
+
+.top-bar .logo .gmail-logo {
+    border: 1px dashed black;
+
+}
+
+/*TOP BAR SEARCH SECTION*/
+
+.top-bar .search {
+    border: 1px dashed black;
+
+    display: grid;
+    padding: 5px;
+}
+
+.top-bar .search-bar {
+    border: 1px dashed black;
+}
+
+/*TOP BAR MENU SECTION*/
+
+.top-bar .menu {
+    border: 1px dashed black;
+    display: grid;
+    grid-template-columns: 35px 35px 35px 100px;
+    justify-content: right;
+
+
+    padding: 5px;
+    grid-gap: 5px;
+
+}
+
+.top-bar .menu .help,
+.top-bar .menu .gear,
+.top-bar .menu .options,
+.top-bar .menu .profile {
+    border: 1px dashed black;
+}
+
+
+
+
+.left-menu {
+    grid-area: left-menu;
+    background-color: #00ff0050;
+
+    display: grid;
+    grid-template-rows: 50px 2fr 80px 1fr;
+
+    padding: 5px;
+    grid-gap: 5px;
+}
+
+.left-menu .compose,
+.left-menu .folders, 
+.left-menu .meet, 
+.left-menu .chat {
+    border: 1px dashed black;
+} 
+
+
+
+.left-menu .folders ul {
+    display: grid;
+    grid-auto-rows: 40px;
+
+    grid-gap: 5px;
+    padding: 5px;
+
+}
+
+
+.left-menu .folders li {
+    border: 1px dashed black;
+
+    display: grid;
+
+
+    grid-template-columns: 30px 1fr 20px;
+
+    grid-gap: 5px;
+}
+
+.left-menu .folders li div {
+    border: 1px dashed black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*TOP BAR EMAILS SECTION*/
+
+.emails {
+    grid-area: emails;
+    background-color: #0000ff50;
+}
+
+.settings {
+    grid-area: settings;
+    background-color: #ff00ff50;
+}
+
+
+
+
+
+.shortcuts {
+    grid-area: shortcuts;
+    background-color: #ffff0050;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+@media screen and (max-width: 880px) {
+    .container {
+        grid-template: 
+        "top-bar   top-bar" 50px 
+        "left-menu  emails " 1fr / 
+        220px 1fr;
+    }
+    
+    .settings,
+    .shortcuts {
+        display: none;
+    }
+} 
+
+@media screen and (max-width: 520px) {
+    .container {
+        grid-template: auto
+        "top-bar   top-bar" 50px
+        "left-menu  emails" 1fr /
+        80px 1fr;
+    }
+}
